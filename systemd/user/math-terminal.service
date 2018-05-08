@@ -1,0 +1,11 @@
+[Unit]
+Description=Math terminal
+
+[Service]
+Environment=DISPLAY=:0
+ExecStartPre=/usr/bin/sleep 1
+ExecStart=/usr/bin/sakura --name math -d %h -e "python -ic ''"
+Restart=always
+
+[Install]
+WantedBy=default.target

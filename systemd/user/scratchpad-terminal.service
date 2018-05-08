@@ -1,0 +1,13 @@
+[Unit]
+Description=Compton
+Requires=compton.service
+After=compton.service
+
+[Service]
+Environment=DISPLAY=:0
+ExecStartPre=/usr/bin/sleep 1
+ExecStart=/usr/bin/sakura --name scratchpad -d %h
+Restart=always
+
+[Install]
+WantedBy=default.target
