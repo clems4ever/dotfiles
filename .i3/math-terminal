@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set +x
+set +e
+
+while true;
+do
+  st -n math -e python -ic ""
+done

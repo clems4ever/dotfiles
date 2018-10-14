@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+rofi -show run -modi "run,ssh" -location 1 -width 100 \
+		 -lines 2 -line-margin 0 -line-padding 1 \
+		 -separator-style none -font "mono 10" -columns 9 -bw 0 \
+		 -hide-scrollbar \
+		 -theme Arc-Dark \
+		 -kb-row-select "Tab" -kb-row-tab ""

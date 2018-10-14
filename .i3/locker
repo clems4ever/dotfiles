@@ -1,0 +1,18 @@
+#!/bin/bash
+
+TMP_IMG=/tmp/screen.png
+
+function pixelize() {
+  convert $TMP_IMG -scale 10% -scale 1000% -fill black -colorize 75% $TMP_IMG
+  [[ -f $1 ]] && convert $TMP_IMG $1 -gravity center -composite -matte $TMP_IMG
+}
+
+function frost() {
+  ~/.i3/frosted -s 20 -b 20 $TMP_IMG $TMP_IMG
+}
+
+scrot $TMP_IMG
+frost
+composite -gravity center $HOME/.i3/lock.png $TMP_IMG $TMP_IMG
+i3lock -u -i $TMP_IMG -n
+rm $TMP_IMG

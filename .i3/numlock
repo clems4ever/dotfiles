@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for tty in /dev/tty{1..9}
+do
+    /usr/bin/setleds -D +num < "$tty";
+done
